@@ -8,10 +8,9 @@ This is a starter project that uses webpack to transpile and bundle ES6 React co
 To experience this repo in all of its glory:
 
 1. Clone this repo
-2. `npm install` and `cd` into it
-3. In terminal window/tab #1: `npm run server`
-4. In terminal window/tab #2: `npm start`
-5. Navigate to [http://localhost:8080](http://localhost:8080)
+2. `cd` into it and `npm install`
+3. Run `npm start`
+4. Navigate to [http://localhost:3000](http://localhost:3000)
 
 
 ## Exercise options
