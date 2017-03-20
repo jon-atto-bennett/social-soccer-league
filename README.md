@@ -15,12 +15,15 @@ To experience this repo in all of its glory:
 
 ## Exercise options
 
-* Add more endpoints routes to `server/routes/widgets.js` and consume them from the client. For example, add a form to add a new widget.
+* Understand where and how each component is being used
+  * make small changes to confirm your hypotheses
+  * reset all changes you've made since last commit with `git checkout .`
 
-* Add application state to manage what is being shown (the list, details, a form to add new widgets). Additional components should be placed in `client/components`.
+* Extend the details that are stored in widgets - add a `rating` field to what is dislayed and to the forms.
 
-* Add more components and write tests for them in `test`. The tests can be run with `npm test`.
+* Add the ability to destroy / delete a widget
 
+* Add the ability to update a widget
 
 ## FYI
 
