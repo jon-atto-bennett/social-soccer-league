@@ -2,7 +2,7 @@ import request from 'superagent'
 
 var widgetUrl = 'http://localhost:3000/widgets'
 
-module.exports = {
+export default {
   getWidgets: getWidgets,
   appendWidget: appendWidget
 }
