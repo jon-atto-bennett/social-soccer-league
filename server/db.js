@@ -1,33 +1,19 @@
+var environment = process.env.NODE_ENV || 'development'
+var config = require('../knexfile')[environment]
+var connection = require('knex')(config)
+
 module.exports = {
-  getWidgets: getWidgets,
-  saveWidget: saveWidget
+  getTeam: getTeam,
+  getTeams: getTeams
 }
 
-var widgets = [{
-  id: 1,
-  name: 'Red widget',
-  price: 23.45,
-  mfg: 'Acme Inc.',
-  inStock: 4
-}, {
-  id: 2,
-  name: 'Blue widget',
-  price: 423.47,
-  mfg: 'Acme Inc.',
-  inStock: 8
-}, {
-  id: 3,
-  name: 'Yellow widget',
-  price: 123.40,
-  mfg: 'Acme Inc.',
-  inStock: 3
-}]
-
-function getWidgets () {
-  return widgets
+function getTeams (testDb) {
+  // Use a test database if one is passed in, or the connection defined above.
+  var db = testDb || connection
+  return db('teams').select()
 }
 
-function saveWidget (widget) {
-  widget.id = widgets.length + 1
-  widgets.push(widget)
+function getTeam (id, testDb) {
+  var db = testDb || connection
+  return db('teams').where('id', id)
 }

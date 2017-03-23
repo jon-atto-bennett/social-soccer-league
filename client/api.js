@@ -1,15 +1,15 @@
 import request from 'superagent'
 
-var widgetUrl = 'http://localhost:3000/widgets'
+var teamsUrl = 'http://localhost:3000/teams'
 
 export default {
-  getWidgets: getWidgets,
-  appendWidget: appendWidget
+  getTeams: getTeams,
+  // appendWidget: appendWidget
 }
 
-function getWidgets (callback) {
+function getTeams (callback) {
   request
-    .get(widgetUrl)
+    .get(teamsUrl)
     .end(function (err, res) {
       if (err) {
         callback(err)
@@ -19,15 +19,15 @@ function getWidgets (callback) {
     })
 }
 
-function appendWidget (widget, callback) {
-  request
-    .post(widgetUrl)
-    .send(widget)
-    .end(function (err, res) {
-      if (err) {
-        callback(err)
-      } else {
-        callback()
-      }
-    })
-}
+// function appendWidget (widget, callback) {
+//   request
+//     .post(widgetUrl)
+//     .send(widget)
+//     .end(function (err, res) {
+//       if (err) {
+//         callback(err)
+//       } else {
+//         callback()
+//       }
+//     })
+// }
