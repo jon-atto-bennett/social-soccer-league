@@ -5,6 +5,7 @@
   "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
   "main": "server/index.js",
   "scripts": {
+    "knex": "knex",
     "start": "nodemon --watch server server/index & webpack --watch",
     "test": "tape -r babel-register 'test/**/*.test.js' | tap-diff",
     "watch": "nodemon -e js,jsx -x npm test",
@@ -30,15 +31,21 @@
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
+    "sqlite3": "^3.1.8",
     "tap-diff": "^0.1.1",
     "tape": "^4.6.3",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
     "express": "^4.14.0",
-    "superagent": "^2.0.0"
+    "knex": "^0.12.8",
+    "nodemon": "^1.11.0",
+    "superagent": "^2.0.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.3"
   }
 }
