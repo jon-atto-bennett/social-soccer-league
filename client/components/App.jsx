@@ -11,7 +11,8 @@ export default React.createClass({
       error: null,
       teams: [],
       fixtures: [],
-      teamListVisible: false
+      teamListVisible: false,
+      fixtureListVisible: false
     }
   },
 
@@ -41,28 +42,37 @@ export default React.createClass({
         <ErrorMessage error={this.state.error} />
         <h1>Social Soccer League</h1>
           <h2>
-            <a href='#' onClick={this.hideTeams}>Home</a>
+            <a href='#' onClick={this.hideAll}>Home</a>
             <a href='#' onClick={this.showTeams}>|Teams</a>
-            | Fixtures & Results |
-          Table | Top Scorers</h2>
+            <a href='#' onClick={this.showFixtures}>|Fixtures & Results</a>
+          |Table | Top Scorers</h2>
         {this.state.teamListVisible && <TeamList
           showDetails={this.showDetails}
           teams={this.state.teams} />}
-        <FixtureList
-          fixtures={this.state.fixtures} />
+        {this.state.fixtureListVisible && <FixtureList
+          fixtures={this.state.fixtures} />}
       </div>
     )
   },
 
   showTeams () {
     this.setState({
-      teamListVisible: true
+      teamListVisible: true,
+      fixtureListVisible: false
     })
   },
 
-  hideTeams () {
+  showFixtures () {
     this.setState({
-      teamListVisible: false
+      fixtureListVisible: true,
+      teamListVisible: false,
+    })
+  },
+
+  hideAll () {
+    this.setState({
+      teamListVisible: false,
+      fixtureListVisible: false
     })
   }
 })
