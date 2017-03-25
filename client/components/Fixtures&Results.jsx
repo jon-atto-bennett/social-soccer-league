@@ -1,11 +1,10 @@
 import React from 'react'
-import TeamListItem from './TeamListItem'
 
 export default React.createClass({
   render () {
     return (
-      <div className="team-list">
-      <h2>Teams</h2>
+      <div className="fixture-list">
+      <h2>Fixtures & Results</h2>
       {this.props.teams.map((team) => {
         return <TeamListItem
           key={team.team_id}
