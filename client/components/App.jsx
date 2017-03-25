@@ -13,7 +13,7 @@ export default React.createClass({
   },
 
   componentDidMount () {
-    api.getTeams(this.renderWidgets)
+    api.getTeams(this.renderTeams)
   },
 
   renderTeams (err, teams) {

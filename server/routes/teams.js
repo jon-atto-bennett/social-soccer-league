@@ -4,7 +4,12 @@ var router = express.Router()
 var db = require('../db')
 
 router.get('/', function (req, res) {
-  res.json(db.getTeams())
+  db.getTeams().then( (result) => {
+    res.send(result)
+  })
+  .catch( (err) => {
+    res.status(500).send(err)
+  })
 })
 
 // router.post('/', function (req, res) {
@@ -12,4 +17,4 @@ router.get('/', function (req, res) {
 //   res.sendStatus(200)
 // })
 
-module.exports = router 
+module.exports = router

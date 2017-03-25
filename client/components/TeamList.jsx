@@ -5,7 +5,8 @@ export default React.createClass({
   render () {
     return (
       <div className="team-list">
-      <h2>Teams</h2>
+      <h2>Teams | Fixtures & Results |
+      Table | Top Scorers</h2>
       {this.props.teams.map((team) => {
         return <TeamListItem
           key={team.team_id}

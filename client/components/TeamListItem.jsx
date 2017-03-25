@@ -6,7 +6,6 @@ export default React.createClass({
     return (
       <div className="team-list-item">
         {`${team.name} `}
-        <a href="#" onClick={() => this.props.showDetails(team)}>details</a>
       </div>
     )
   }
