@@ -28,7 +28,6 @@ function getFixtures (callback) {
         callback(err)
       } else {
         callback(null, res.body)
-        console.log(res.body);
       }
     })
 }

@@ -13,8 +13,11 @@ function getTeams () {
 }
 
 function getFixtures () {
-   return knex('fixtures').select()
-}
+  return knex('teams')
+  .join('team_fixture', 'teams.team_id', '=', 'team_fixture.team_id')
+  .join('fixtures', 'team_fixture.fixture_id', '=', 'fixtures.fixture_id')
+  .select('name', 'pitch', 'week', 'date', 'goals' )
+  }
 // function getTeams (testDb) {
 //   // Use a test database if one is passed in, or the connection defined above.
 //   var db = testDb || connection

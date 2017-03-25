@@ -2,6 +2,7 @@ import React from 'react'
 
 import api from '../api'
 import TeamList from './TeamList'
+import FixtureList from './FixtureList'
 import ErrorMessage from './ErrorMessage'
 
 export default React.createClass({
@@ -47,6 +48,8 @@ export default React.createClass({
         {this.state.teamListVisible && <TeamList
           showDetails={this.showDetails}
           teams={this.state.teams} />}
+        <FixtureList
+          fixtures={this.state.fixtures} />
       </div>
     )
   },
