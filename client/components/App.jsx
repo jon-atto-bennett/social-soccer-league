@@ -3,6 +3,7 @@ import React from 'react'
 import api from '../api'
 import TeamList from './TeamList'
 import FixtureList from './FixtureList'
+import TableList from './TableList'
 import ErrorMessage from './ErrorMessage'
 
 export default React.createClass({
@@ -11,14 +12,17 @@ export default React.createClass({
       error: null,
       teams: [],
       fixtures: [],
+      table: [],
       teamListVisible: false,
-      fixtureListVisible: false
+      fixtureListVisible: false,
+      tableListVisible: false
     }
   },
 
   componentDidMount () {
     api.getTeams(this.renderTeams),
     api.getFixtures(this.renderFixtures)
+    api.getTable(this.renderTable)
   },
 
   renderTeams (err, teams) {
@@ -35,6 +39,13 @@ export default React.createClass({
     })
   },
 
+  renderTable (err, table ) {
+    this.setState({
+      error: err,
+      table: table,
+    })
+  },
+
 
   render () {
     return (
@@ -45,12 +56,15 @@ export default React.createClass({
             <a href='#' onClick={this.hideAll}>Home</a>
             <a href='#' onClick={this.showTeams}>|Teams</a>
             <a href='#' onClick={this.showFixtures}>|Fixtures & Results</a>
-          |Table | Top Scorers</h2>
+            <a href='#' onClick={this.showTable}>|Table</a>
+            |Top Scorers</h2>
         {this.state.teamListVisible && <TeamList
           showDetails={this.showDetails}
           teams={this.state.teams} />}
         {this.state.fixtureListVisible && <FixtureList
           fixtures={this.state.fixtures} />}
+        {this.state.tableListVisible && <TableList
+          table={this.state.table} />}
       </div>
     )
   },
@@ -58,7 +72,8 @@ export default React.createClass({
   showTeams () {
     this.setState({
       teamListVisible: true,
-      fixtureListVisible: false
+      fixtureListVisible: false,
+      tableListVisible: false
     })
   },
 
@@ -66,13 +81,23 @@ export default React.createClass({
     this.setState({
       fixtureListVisible: true,
       teamListVisible: false,
+      tableListVisible: false
+    })
+  },
+
+  showTable () {
+    this.setState({
+      tableListVisible: true,
+      fixtureListVisible: false,
+      teamListVisible: false
     })
   },
 
   hideAll () {
     this.setState({
       teamListVisible: false,
-      fixtureListVisible: false
+      fixtureListVisible: false,
+      tableListVisible: false
     })
   }
 })

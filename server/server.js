@@ -5,6 +5,7 @@ var path = require('path')
 
 var teams = require('./routes/teams')
 var fixtures = require('./routes/fixtures')
+var table = require('./routes/table')
 
 var app = express()
 
@@ -13,5 +14,6 @@ app.use(cors({origin: 'http://localhost:8080'}))
 app.use(express.static(path.join(__dirname, '../public')))
 app.use('/teams', teams)
 app.use('/fixtures', fixtures)
+app.use('/table', table)
 
 module.exports = app
