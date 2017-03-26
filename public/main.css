@@ -18,14 +18,14 @@
 }
 
 .table-list-item {
-  font-size: 1.5em;
-  padding-left: 10%;
-  text-align: left;
+  /*font-size: 1.5em;*/
+  /*padding-left: 10%;
+  text-align: left;*/
 
 }
 
 .table-list {
-  padding: 5% 25%;
+  padding-left: 25%;
 }
 
 .widget-details .visible {
@@ -38,7 +38,7 @@
 
 table {
   /*font-size: .75em;*/
-  
+
 }
 
 a {

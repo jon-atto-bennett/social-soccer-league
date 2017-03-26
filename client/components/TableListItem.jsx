@@ -4,19 +4,17 @@ export default React.createClass({
   render () {
     const table = this.props.table
     return (
-      <div className='table-list-item'>
-        <tbody>
-        <th>{`${table.name}`}</th>
-        <th>{`${table.games_played}`}</th>
-        <th>{`${table.won}`}</th>
-        <th>{`${table.drawn}`}</th>
-        <th>{`${table.lost}`}</th>
-        <th>{`${table.goals_for}`}</th>
-        <th>{`${table.goals_against}`}</th>
-        <th>{`${table.goal_diff}`}</th>
-        <th>{`${table.points}`}</th>
-        </tbody>
-      </div>
+      <tr className='table-list-item'>
+        <td>{`${table.name}`}</td>
+        <td>{`${table.games_played}`}</td>
+        <td>{`${table.won}`}</td>
+        <td>{`${table.drawn}`}</td>
+        <td>{`${table.lost}`}</td>
+        <td>{`${table.goals_for}`}</td>
+        <td>{`${table.goals_against}`}</td>
+        <td>{`${table.goal_diff}`}</td>
+        <td>{`${table.points}`}</td>
+      </tr>
     )
   }
 })

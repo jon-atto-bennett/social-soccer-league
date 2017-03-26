@@ -20,15 +20,16 @@ export default React.createClass({
               <th>Points</th>
             </tr>
           </thead>
+          <tbody>
+            {this.props.table.map((table) => {
+          return <TableListItem
+              key={table.team_id}
+              table={table}
+              hideDetails={this.props.hideDetails}
+              showDetails={this.props.showDetails} />
+          })}
+          </tbody>
           </table>
-          {this.props.table.map((table) => {
-        return <TableListItem
-            key={table.team_id}
-            table={table}
-            hideDetails={this.props.hideDetails}
-            showDetails={this.props.showDetails} />
-
-        })}
       </div>
     )
   }
