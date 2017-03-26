@@ -1,3 +1,33 @@
+* {
+  border: 1px solid red !important;
+}
+
+#app {
+  text-align: center;
+}
+
+.team-list-item {
+  font-size: 1.5em;
+  padding-left: 40%;
+  text-align: left;
+
+}
+
+.team-list {
+  padding: 5% 25%;
+}
+
+.table-list-item {
+  font-size: 1.5em;
+  padding-left: 10%;
+  text-align: left;
+
+}
+
+.table-list {
+  padding: 5% 25%;
+}
+
 .widget-details .visible {
   display: block;
 }
@@ -6,3 +36,27 @@
   display: none;
 }
 
+a {
+  color: black;
+  padding: 20px;
+}
+
+
+a:link {
+    text-decoration: none;
+
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: green;
+}
+
+a:active {
+    text-decoration: underline;
+}
+</style>

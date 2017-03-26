@@ -57,12 +57,13 @@ export default React.createClass({
       <div>
         <ErrorMessage error={this.state.error} />
         <h1>Social Soccer League</h1>
-        <h2>
+        <h5>
           <a href='#' onClick={this.hideAll}>Home</a>
-          <a href='#' onClick={this.showTeams}>|Teams</a>
-          <a href='#' onClick={this.showFixtures}>|Fixtures & Results</a>
-          <a href='#' onClick={this.showTable}>|Table</a>
-            |Top Scorers</h2>
+          <a href='#' onClick={this.showTeams}>Teams</a>
+          <a href='#' onClick={this.showFixtures}>Fixtures & Results</a>
+          <a href='#' onClick={this.showTable}>Table</a>
+          <a href='#' onClick={this.showTable}>Top Scorers</a>
+        </h5>
         {this.state.teamListVisible && <TeamList
           showDetails={this.showDetails}
           teams={this.state.teams} />}
