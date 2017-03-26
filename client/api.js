@@ -45,15 +45,15 @@ function getTable (callback) {
     })
 }
 
-function appendWidget (widget, callback) {
-  request
-    .post(widgetUrl)
-    .send(widget)
-    .end(function (err, res) {
-      if (err) {
-        callback(err)
-      } else {
-        callback()
-      }
-    })
-}
+// function appendWidget (widget, callback) {
+//   request
+//     .post(widgetUrl)
+//     .send(widget)
+//     .end(function (err, res) {
+//       if (err) {
+//         callback(err)
+//       } else {
+//         callback()
+//       }
+//     })
+// }

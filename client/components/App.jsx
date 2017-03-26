@@ -20,7 +20,7 @@ export default React.createClass({
   },
 
   componentDidMount () {
-    api.getTeams(this.renderTeams),
+    api.getTeams(this.renderTeams)
     api.getFixtures(this.renderFixtures)
     api.getTable(this.renderTable)
   },
@@ -32,31 +32,36 @@ export default React.createClass({
     })
   },
 
-  renderFixtures (err, fixtures ) {
+  renderFixtures (err, fixtures) {
     this.setState({
       error: err,
       fixtures: fixtures
     })
   },
 
-  renderTable (err, table ) {
+  renderTable (err, table) {
     this.setState({
       error: err,
-      table: table,
+      table: table.sort((a, b) => {
+        if (a.points !== b.points) {
+          return (b.points - a.points)
+        } else {
+          return (b.goal_diff - a.goal_diff)
+        }
+      })
     })
   },
-
 
   render () {
     return (
       <div>
         <ErrorMessage error={this.state.error} />
         <h1>Social Soccer League</h1>
-          <h2>
-            <a href='#' onClick={this.hideAll}>Home</a>
-            <a href='#' onClick={this.showTeams}>|Teams</a>
-            <a href='#' onClick={this.showFixtures}>|Fixtures & Results</a>
-            <a href='#' onClick={this.showTable}>|Table</a>
+        <h2>
+          <a href='#' onClick={this.hideAll}>Home</a>
+          <a href='#' onClick={this.showTeams}>|Teams</a>
+          <a href='#' onClick={this.showFixtures}>|Fixtures & Results</a>
+          <a href='#' onClick={this.showTable}>|Table</a>
             |Top Scorers</h2>
         {this.state.teamListVisible && <TeamList
           showDetails={this.showDetails}

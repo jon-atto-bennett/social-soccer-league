@@ -15,11 +15,11 @@ function getTeams () {
 
 function getFixtures () {
   return knex('fixtures').select()
-  }
+}
 
-  function getTable (){
-    return knex('teams').select()
-  }
+function getTable () {
+  return knex('teams').select()
+}
 // function getTeams (testDb) {
 //   // Use a test database if one is passed in, or the connection defined above.
 //   var db = testDb || connection
