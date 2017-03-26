@@ -3,10 +3,19 @@ import React from 'react'
 export default React.createClass({
   render () {
     const table = this.props.table
-
     return (
       <div className='table-list-item'>
-        {`${table.name} | ${table.games_played} | ${table.won} |  ${table.drawn} | ${table.lost} | ${table.goals_for} | ${table.goals_against} | ${table.goal_diff} | ${table.points} `}
+        <tbody>
+        <th>{`${table.name}`}</th>
+        <th>{`${table.games_played}`}</th>
+        <th>{`${table.won}`}</th>
+        <th>{`${table.drawn}`}</th>
+        <th>{`${table.lost}`}</th>
+        <th>{`${table.goals_for}`}</th>
+        <th>{`${table.goals_against}`}</th>
+        <th>{`${table.goal_diff}`}</th>
+        <th>{`${table.points}`}</th>
+        </tbody>
       </div>
     )
   }

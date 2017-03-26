@@ -14,7 +14,7 @@
 }
 
 .team-list {
-  padding: 5% 25%;
+  padding: 5% 20%;
 }
 
 .table-list-item {
@@ -34,6 +34,11 @@
 
 .widget-details .hidden {
   display: none;
+}
+
+table {
+  /*font-size: .75em;*/
+  
 }
 
 a {
