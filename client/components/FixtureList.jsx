@@ -6,6 +6,17 @@ export default React.createClass({
     return (
       <div className='fixture-list'>
         <h2>Fixtures & Results</h2>
+          <table>
+            <thead>
+              <tr>
+                <th className='row'>Week</th>
+                <th className='row'>Date</th>
+                <th className='row'>Pitch</th>
+                <th className='row'>Teams</th>
+                <th className='row'>Result</th>
+              </tr>
+            </thead>
+            <tbody>
         {this.props.fixtures.map((fixture) => {
           return <FixtureListItem
             key={fixture.fixture_id}
@@ -13,6 +24,8 @@ export default React.createClass({
             hideDetails={this.props.hideDetails}
             showDetails={this.props.showDetails} />
         })}
+      </tbody>
+      </table>
       </div>
     )
   }

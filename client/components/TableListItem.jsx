@@ -6,14 +6,14 @@ export default React.createClass({
     return (
       <tr className='table-list-item'>
         <td>{`${table.name}`}</td>
-        <td>{`${table.games_played}`}</td>
-        <td>{`${table.won}`}</td>
-        <td>{`${table.drawn}`}</td>
-        <td>{`${table.lost}`}</td>
-        <td>{`${table.goals_for}`}</td>
-        <td>{`${table.goals_against}`}</td>
-        <td>{`${table.goal_diff}`}</td>
-        <td>{`${table.points}`}</td>
+        <td className='row'>{`${table.games_played}`}</td>
+        <td className='row'>{`${table.won}`}</td>
+        <td className='row'>{`${table.drawn}`}</td>
+        <td className='row'>{`${table.lost}`}</td>
+        <td className='row'>{`${table.goals_for}`}</td>
+        <td className='row'>{`${table.goals_against}`}</td>
+        <td className='row'>{`${table.goal_diff}`}</td>
+        <td className='row'>{`${table.points}`}</td>
       </tr>
     )
   }
