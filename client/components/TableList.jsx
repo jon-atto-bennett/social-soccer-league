@@ -22,14 +22,14 @@ export default React.createClass({
           </thead>
           <tbody>
             {this.props.table.map((table) => {
-          return <TableListItem
-              key={table.team_id}
-              table={table}
-              hideDetails={this.props.hideDetails}
-              showDetails={this.props.showDetails} />
-          })}
+              return <TableListItem
+                key={table.team_id}
+                table={table}
+                hideDetails={this.props.hideDetails}
+                showDetails={this.props.showDetails} />
+            })}
           </tbody>
-          </table>
+        </table>
       </div>
     )
   }

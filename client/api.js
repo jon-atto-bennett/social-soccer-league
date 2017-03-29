@@ -5,8 +5,8 @@ var teamsUrl = 'http://localhost:3000'
 export default {
   getTeams: getTeams,
   getFixtures: getFixtures,
-  getTable: getTable
-  // appendWidget: appendWidget
+  getTable: getTable,
+  appendResult: appendResult
 }
 
 function getTeams (callback) {
@@ -45,15 +45,15 @@ function getTable (callback) {
     })
 }
 
-// function appendWidget (widget, callback) {
-//   request
-//     .post(widgetUrl)
-//     .send(widget)
-//     .end(function (err, res) {
-//       if (err) {
-//         callback(err)
-//       } else {
-//         callback()
-//       }
-//     })
-// }
+function appendResult (result, callback) {
+  request
+    .post(teamsUrl + '/result')
+    .send(result)
+    .end(function (err, res) {
+      if (err) {
+        callback(err)
+      } else {
+        callback()
+      }
+    })
+}

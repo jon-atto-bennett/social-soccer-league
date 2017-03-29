@@ -6,7 +6,8 @@ module.exports = {
   // getTeam: getTeam,
   getTeams: getTeams,
   getFixtures: getFixtures,
-  getTable: getTable
+  getTable: getTable,
+  saveResult: saveResult
 }
 
 function getTeams () {
@@ -20,13 +21,7 @@ function getFixtures () {
 function getTable () {
   return knex('teams').select()
 }
-// function getTeams (testDb) {
-//   // Use a test database if one is passed in, or the connection defined above.
-//   var db = testDb || connection
-//   return db('teams').select()
-// }
 
-// function getTeam (id, testDb) {
-//   var db = testDb || connection
-//   return db('teams').where('id', id)
-// }
+function saveResult (result) {
+  console.log(result)
+}

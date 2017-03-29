@@ -1,6 +1,7 @@
 import React from 'react'
 
 import api from '../api'
+import AddResult from './AddResult'
 import TeamList from './TeamList'
 import FixtureList from './FixtureList'
 import TableList from './TableList'
@@ -15,7 +16,8 @@ export default React.createClass({
       table: [],
       teamListVisible: false,
       fixtureListVisible: false,
-      tableListVisible: false
+      tableListVisible: false,
+      addResultVisible: false
     }
   },
 
@@ -52,6 +54,12 @@ export default React.createClass({
     })
   },
 
+  showAddResult () {
+    this.setState({
+      addResultVisible: true
+    })
+  },
+
   render () {
     return (
       <div>
@@ -68,7 +76,10 @@ export default React.createClass({
           showDetails={this.showDetails}
           teams={this.state.teams} />}
         {this.state.fixtureListVisible && <FixtureList
+          showAddResult={this.showAddResult}
           fixtures={this.state.fixtures} />}
+        {this.state.addResultVisible && <AddResult
+          finishAdd={this.refreshList} />}
         {this.state.tableListVisible && <TableList
           table={this.state.table} />}
       </div>
