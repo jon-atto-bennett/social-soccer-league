@@ -59,6 +59,8 @@ export default React.createClass({
       team_2: this.props.fixture.team_2,
       team_2_goals: this.state.team_2_goals
     }
-    api.appendResult(result)
+    api.appendResult(result, () => {
+      this.props.finishAdd()
+    })
   }
 })

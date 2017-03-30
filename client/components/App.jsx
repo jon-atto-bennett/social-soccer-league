@@ -99,6 +99,7 @@ export default React.createClass({
   },
 
   showFixtures () {
+    this.componentDidMount()   // bit hacky
     this.setState({
       fixtureListVisible: true,
       teamListVisible: false,

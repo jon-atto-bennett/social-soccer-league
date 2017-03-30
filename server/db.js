@@ -23,16 +23,15 @@ function getTable () {
 }
 
 function saveResult (result) {
-  var id = result.fixture_id
-  console.log(result.fixture_id)
-  knex('fixtures').where('fixture_id', '=', result.fixture_id)
+  // var id = result.fixture_id
+  return knex('fixtures').where('fixture_id', '=', result.fixture_id)
     .update({
       team_1_goals: result.team_1_goals,
       team_2_goals: result.team_2_goals
     })
-    .then(result => {
-      return knex('fixtures').select()
-      //  where({fixture_id: id})
-      // .then(console.lof)
-    })
+    // .then(result => {
+    //   return knex('fixtures').select()
+    //   //  where({fixture_id: id})
+    //   // .then(console.lof)
+    // })
 }
