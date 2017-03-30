@@ -4,10 +4,8 @@ import api from '../api'
 export default React.createClass({
   getInitialState () {
     return {
-      team_1: 'Loverpill',
-      team_2: 'Tootem Spuds',
-      team_1_goals: 4,
-      team_2_goals: 2
+      team_1_goals: 0,
+      team_2_goals: 0
     }
   },
 
@@ -18,7 +16,7 @@ export default React.createClass({
         <form>
           <p>
             <input placeholder='team_1'
-              defaultValue={this.state.team_1}
+              defaultValue={this.props.fixture.team_1} readOnly='true'
             />
           <input placeholder='Score'
               onChange={this.team_1_goalsChanged}
@@ -27,7 +25,7 @@ export default React.createClass({
           </p>
           <p>
             <input placeholder='team_2'
-              defaultValue={this.state.team_2}
+              defaultValue={this.props.fixture.team_2} readOnly='true'
             />
           <input placeholder='Score'
               onChange={this.team_2_goalsChanges}
@@ -41,7 +39,7 @@ export default React.createClass({
     )
   },
 
-team_1_goalsChanged (e) {
+  team_1_goalsChanged (e) {
     this.setState({
       team_1_goals: e.target.value
     })
@@ -54,7 +52,13 @@ team_1_goalsChanged (e) {
   },
 
   addResult () {
-    const result = this.state
-    api.appendResult(result, this.props.finishAdd)
+    const result = {
+      fixture_id: this.props.fixture.fixture_id,
+      team_1: this.props.fixture.team_1,
+      team_1_goals: this.state.team_1_goals,
+      team_2: this.props.fixture.team_2,
+      team_2_goals: this.state.team_2_goals
+    }
+    api.appendResult(result)
   }
 })

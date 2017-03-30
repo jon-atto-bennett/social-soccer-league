@@ -11,7 +11,9 @@ export default React.createClass({
         <td className='row'>{`${fixture.date}`}</td>
         <td className='row'>{`${fixture.pitch}`}</td>
         <td className='row'>{`${fixture.team_1}`} vs {`${fixture.team_2}`}</td>
-        <td className='row'><a href='#' onClick={() => this.props.showAddResult(fixture)}>{`${fixture.team_1_goals}`} - {`${fixture.team_2_goals}`}</a></td>
+        <td className='row'><a href='#' onClick={() =>
+            this.props.showAddResult(fixture)}>
+            {`${fixture.team_1_goals}`} - {`${fixture.team_2_goals}`}</a></td>
       </tr>
     )
   }

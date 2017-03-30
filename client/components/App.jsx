@@ -14,6 +14,7 @@ export default React.createClass({
       teams: [],
       fixtures: [],
       table: [],
+      activeFixture: {},
       teamListVisible: false,
       fixtureListVisible: false,
       tableListVisible: false,
@@ -54,9 +55,11 @@ export default React.createClass({
     })
   },
 
-  showAddResult () {
+  showAddResult (fixture) {
     this.setState({
-      addResultVisible: true
+      addResultVisible: true,
+      fixtureListVisible: false,
+      activeFixture: fixture
     })
   },
 
@@ -79,7 +82,8 @@ export default React.createClass({
           showAddResult={this.showAddResult}
           fixtures={this.state.fixtures} />}
         {this.state.addResultVisible && <AddResult
-          finishAdd={this.refreshList} />}
+          finishAdd={this.showFixtures}
+          fixture={this.state.activeFixture} />}
         {this.state.tableListVisible && <TableList
           table={this.state.table} />}
       </div>
@@ -98,7 +102,8 @@ export default React.createClass({
     this.setState({
       fixtureListVisible: true,
       teamListVisible: false,
-      tableListVisible: false
+      tableListVisible: false,
+      addResultVisible: false
     })
   },
 
