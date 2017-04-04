@@ -6,6 +6,7 @@ import TeamList from './TeamList'
 import FixtureList from './FixtureList'
 import TableList from './TableList'
 import ErrorMessage from './ErrorMessage'
+import AdminLogin from './AdminLogin'
 
 export default React.createClass({
   getInitialState () {
@@ -18,7 +19,8 @@ export default React.createClass({
       teamListVisible: false,
       fixtureListVisible: false,
       tableListVisible: false,
-      addResultVisible: false
+      addResultVisible: false,
+      adminLoginVisible: false
     }
   },
 
@@ -55,14 +57,6 @@ export default React.createClass({
     })
   },
 
-  showAddResult (fixture) {
-    this.setState({
-      addResultVisible: true,
-      fixtureListVisible: false,
-      activeFixture: fixture
-    })
-  },
-
   render () {
     return (
       <div>
@@ -73,7 +67,7 @@ export default React.createClass({
           <a href='#' onClick={this.showTeams}>Teams</a>
           <a href='#' onClick={this.showFixtures}>Fixtures & Results</a>
           <a href='#' onClick={this.showTable}>Table</a>
-          <a href='#' onClick={this.showTable}>Top Scorers</a>
+          <a href='#' onClick={this.showAdminLogin}>Admin</a>
         </h5>
         {this.state.teamListVisible && <TeamList
           showDetails={this.showDetails}
@@ -86,6 +80,7 @@ export default React.createClass({
           fixture={this.state.activeFixture} />}
         {this.state.tableListVisible && <TableList
           table={this.state.table} />}
+        {this.state.adminLoginVisible && <AdminLogin />}
       </div>
     )
   },
@@ -94,7 +89,8 @@ export default React.createClass({
     this.setState({
       teamListVisible: true,
       fixtureListVisible: false,
-      tableListVisible: false
+      tableListVisible: false,
+      adminLoginVisible: false
     })
   },
 
@@ -104,7 +100,8 @@ export default React.createClass({
       fixtureListVisible: true,
       teamListVisible: false,
       tableListVisible: false,
-      addResultVisible: false
+      addResultVisible: false,
+      adminLoginVisible: false
     })
   },
 
@@ -112,7 +109,8 @@ export default React.createClass({
     this.setState({
       tableListVisible: true,
       fixtureListVisible: false,
-      teamListVisible: false
+      teamListVisible: false,
+      adminLoginVisible: false
     })
   },
 
@@ -120,7 +118,27 @@ export default React.createClass({
     this.setState({
       teamListVisible: false,
       fixtureListVisible: false,
-      tableListVisible: false
+      tableListVisible: false,
+      adminLoginVisible: false
     })
-  }
+  },
+
+showAddResult (fixture) {
+  this.setState({
+    addResultVisible: true,
+    fixtureListVisible: false,
+    activeFixture: fixture
+  })
+},
+
+showAdminLogin () {
+  this.setState({
+    adminLoginVisible: true,
+    fixtureListVisible: false,
+    teamListVisible: false,
+    tableListVisible: false,
+    addResultVisible: false,
+  })
+},
+
 })
