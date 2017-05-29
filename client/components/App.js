@@ -123,22 +123,22 @@ export default React.createClass({
     })
   },
 
-showAddResult (fixture) {
-  this.setState({
-    addResultVisible: true,
-    fixtureListVisible: false,
-    activeFixture: fixture
-  })
-},
+  showAddResult (fixture) {
+    this.setState({
+      addResultVisible: true,
+      fixtureListVisible: false,
+      activeFixture: fixture
+    })
+  },
 
-showAdminLogin () {
-  this.setState({
-    adminLoginVisible: true,
-    fixtureListVisible: false,
-    teamListVisible: false,
-    tableListVisible: false,
-    addResultVisible: false,
-  })
-},
+  showAdminLogin () {
+    this.setState({
+      adminLoginVisible: true,
+      fixtureListVisible: false,
+      teamListVisible: false,
+      tableListVisible: false,
+      addResultVisible: false
+    })
+  }
 
 })

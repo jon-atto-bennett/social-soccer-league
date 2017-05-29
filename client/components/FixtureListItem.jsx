@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AddResult from './AddResult'
+// import AddResult from './AddResult'
 
 export default React.createClass({
   render () {
@@ -13,7 +13,7 @@ export default React.createClass({
         <td className='row'>{`${fixture.team_1}`} vs {`${fixture.team_2}`}</td>
         <td className='row'><a href='#' onClick={() =>
             this.props.showAddResult(fixture)}>
-            {`${fixture.team_1_goals}`} - {`${fixture.team_2_goals}`}</a></td>
+          {`${fixture.team_1_goals}`} - {`${fixture.team_2_goals}`}</a></td>
       </tr>
     )
   }

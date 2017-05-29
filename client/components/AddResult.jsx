@@ -18,7 +18,7 @@ export default React.createClass({
             <input placeholder='team_1'
               defaultValue={this.props.fixture.team_1} readOnly='true'
             />
-          <input placeholder='Score'
+            <input placeholder='Score'
               onChange={this.team_1_goalsChanged}
               value={this.state.team_1_goals}
             />
@@ -27,7 +27,7 @@ export default React.createClass({
             <input placeholder='team_2'
               defaultValue={this.props.fixture.team_2} readOnly='true'
             />
-          <input placeholder='Score'
+            <input placeholder='Score'
               onChange={this.team_2_goalsChanges}
               value={this.state.team_2_goals}
             />
