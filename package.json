@@ -13,8 +13,7 @@
     "test": "tape -r babel-register 'test/**/*.test.js' | tap-diff",
     "watch": "nodemon -e js,jsx -x npm test",
     "dev": "nodemon server server/index & webpack --watch",
-    "debug": "node --inspect --debug-brk server/index",
-    "postinstall": "knex migrate:lastest && npm run build"
+    "debug": "node --inspect --debug-brk server/index"
   },
   "babel": {
     "presets": [
