@@ -6,10 +6,10 @@
   "main": "server/index.js",
   "scripts": {
     "knex": "knex",
-    "start": "nodemon --watch server server/index & webpack --watch",
+    "start": "node server",
     "test": "tape -r babel-register 'test/**/*.test.js' | tap-diff",
     "watch": "nodemon -e js,jsx -x npm test",
-    "dev": "webpack-dev-server --hot --inline",
+    "dev": "nodemon server server/index & webpack --watch",
     "debug": "node --inspect --debug-brk server/index"
   },
   "babel": {
