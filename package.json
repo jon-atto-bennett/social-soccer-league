@@ -5,12 +5,13 @@
   "repository": "https://github.com/jon-atto-bennett/social-soccer-league.git",
   "main": "server/index.js",
   "scripts": {
-    "knex": "knex",
     "start": "node server",
+    "knex": "knex",
     "test": "tape -r babel-register 'test/**/*.test.js' | tap-diff",
     "watch": "nodemon -e js,jsx -x npm test",
     "dev": "nodemon server server/index & webpack --watch",
-    "debug": "node --inspect --debug-brk server/index"
+    "debug": "node --inspect --debug-brk server/index",
+    "postinstall": "knex migrate:lastest && npm run build"
   },
   "babel": {
     "presets": [
