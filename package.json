@@ -9,11 +9,13 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
+    "build": "webpack -p",
     "knex": "knex",
     "test": "tape -r babel-register 'test/**/*.test.js' | tap-diff",
     "watch": "nodemon -e js,jsx -x npm test",
     "dev": "nodemon server server/index & webpack --watch",
-    "debug": "node --inspect --debug-brk server/index"
+    "debug": "node --inspect --debug-brk server/index",
+    "postinstall": "knex migrate:lastest && npm run build"
   },
   "babel": {
     "presets": [
