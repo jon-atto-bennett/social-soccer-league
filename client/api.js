@@ -1,6 +1,10 @@
 import request from 'superagent'
 
-var teamsUrl = 'http://localhost:3000'
+const url = require('url')
+
+const config = require('../../config')
+
+var teamsUrl = url.format(config)
 
 export default {
   getTeams: getTeams,
