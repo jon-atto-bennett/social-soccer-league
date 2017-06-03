@@ -2,7 +2,7 @@ import request from 'superagent'
 
 const url = require('url')
 
-const config = require('../../config')
+const config = require('../config')
 
 var teamsUrl = url.format(config)
 
