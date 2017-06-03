@@ -49,6 +49,9 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
     "babel": "^6.23.0",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
